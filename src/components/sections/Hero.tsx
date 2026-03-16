@@ -4,9 +4,9 @@ import { siteData } from "@/data/siteData";
 
 export default function Hero() {
   return (
-    <section id="home" style={{ paddingTop: "8rem", paddingBottom: "5rem", borderBottom: "1px solid var(--border)" }}>
+    <section id="home" className="hero-section" style={{ paddingTop: "6rem", paddingBottom: "4rem", borderBottom: "1px solid var(--border)" }}>
       <div className="container">
-        <div style={{ display: "flex", alignItems: "center", gap: "2.5rem", flexWrap: "wrap" }}>
+        <div className="hero-layout">
           {/* Profile photo */}
           <div
             style={{
