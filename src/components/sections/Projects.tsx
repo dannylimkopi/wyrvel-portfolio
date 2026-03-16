@@ -84,25 +84,12 @@ function VideoLightbox({ src, onClose }: { src: string; onClose: () => void }) {
   return (
     <div
       onClick={onClose}
-      style={{
-        position: "fixed", inset: 0, zIndex: 9999,
-        background: "rgba(0, 0, 0, 0.92)",
-        display: "flex", alignItems: "center", justifyContent: "center",
-        cursor: "pointer",
-        animation: "fadeIn 0.2s ease",
-      }}
+      className="video-lightbox-overlay"
     >
       {/* Close button */}
       <button
         onClick={onClose}
-        style={{
-          position: "absolute", top: "20px", right: "24px",
-          background: "none", border: "none", color: "#fff",
-          fontSize: "1.5rem", cursor: "pointer", zIndex: 10000,
-          opacity: 0.7, transition: "opacity 0.2s",
-        }}
-        onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
-        onMouseLeave={e => (e.currentTarget.style.opacity = "0.7")}
+        className="video-lightbox-close"
         aria-label="Close video"
       >✕</button>
 
@@ -113,11 +100,7 @@ function VideoLightbox({ src, onClose }: { src: string; onClose: () => void }) {
         controls
         playsInline
         onClick={e => e.stopPropagation()}
-        style={{
-          width: "90vw", maxWidth: "1200px", maxHeight: "85vh",
-          borderRadius: "8px", cursor: "default",
-          boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
-        }}
+        className="video-lightbox-player"
       />
     </div>
   );
@@ -196,12 +179,7 @@ export default function Projects() {
                 <div key={i} className="card project-card" style={{ padding: 0, overflow: "hidden" }}>
                   {/* Media section: carousel + video side by side */}
                   {(images.length > 0 || video) && (
-                    <div style={{
-                      display: "grid",
-                      gridTemplateColumns: video && images.length > 0 ? "1fr 1fr" : "1fr",
-                      gap: "2px",
-                      background: "var(--bg-primary)",
-                    }}>
+                    <div className={video && images.length > 0 ? "project-media-grid" : "project-media-single"}>
                       {images.length > 0 && <ImageCarousel images={images} />}
                       {video && <VideoThumbnail src={video} onOpen={() => setLightboxVideo(video)} />}
                     </div>
@@ -244,11 +222,79 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* Keyframe for modal fade-in */}
+      {/* Responsive + lightbox styles */}
       <style jsx global>{`
         @keyframes fadeIn {
           from { opacity: 0; }
           to { opacity: 1; }
+        }
+
+        .video-lightbox-overlay {
+          position: fixed;
+          top: 0; left: 0; right: 0; bottom: 0;
+          z-index: 9999;
+          background: rgba(0, 0, 0, 0.92);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1rem;
+          cursor: pointer;
+          animation: fadeIn 0.2s ease;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        .video-lightbox-close {
+          position: absolute;
+          top: 12px; right: 16px;
+          background: rgba(0,0,0,0.5);
+          border: none;
+          color: #fff;
+          font-size: 1.3rem;
+          cursor: pointer;
+          z-index: 10000;
+          width: 36px; height: 36px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .video-lightbox-player {
+          width: 100%;
+          max-width: 1200px;
+          max-height: 85vh;
+          max-height: 85dvh;
+          border-radius: 8px;
+          cursor: default;
+          box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+        }
+
+        .project-media-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2px;
+          background: var(--bg-primary);
+        }
+
+        .project-media-single {
+          background: var(--bg-primary);
+        }
+
+        @media (max-width: 640px) {
+          .project-media-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .video-lightbox-player {
+            max-height: 50vh;
+            max-height: 50dvh;
+            border-radius: 4px;
+          }
+
+          .video-lightbox-close {
+            top: 8px;
+            right: 8px;
+          }
         }
       `}</style>
     </>

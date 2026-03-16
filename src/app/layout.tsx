@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   title: "Danny Lim | Full-Stack Developer & AI Automation Specialist",
   description:
     "Full-stack developer specialising in Next.js, React, TypeScript, and AI-powered business automation with n8n. Building fast, clean web apps and automations that save businesses hours every week.",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+  },
   keywords: [
     "Danny Lim",
     "full-stack developer",
