@@ -50,15 +50,17 @@ export const siteData = {
       tags: ["n8n", "OpenAI API", "REST API", "Docker", "WhatsApp"],
       type: "Automation",
       images: ["/projects/demo1-automation.png", "/projects/demo1-workflow.png"],
+      video: "/projects/demo1-video.mp4",
       results: ["10+ hrs/week saved", "Zero missed leads", "108 auto-generated tasks"],
     },
     {
       title: "Custom CRM — Built for Real Estate",
       description:
-        "Deeply customised an open-source CRM into a purpose-built app for a Singapore real estate agent. Contact-centric model with property tracking (HDB/Condo/Landed), WhatsApp auto-capture, AI lead scoring, and 108 auto-generated follow-up tasks with deadline tracking.",
+        "Built a purpose-built CRM for a Singapore real estate agent. Contact-centric model with property tracking (HDB/Condo/Landed), WhatsApp auto-capture, AI lead scoring, and 108 auto-generated follow-up tasks with deadline tracking.",
       tags: ["Next.js 15", "TypeScript", "PostgreSQL", "Drizzle ORM", "Turborepo"],
       type: "Web App",
       images: ["/projects/demo2-screenshot-1.png", "/projects/demo2-screenshot-2.png", "/projects/demo2-screenshot-5.png"],
+      video: "/projects/demo2-video.mp4",
       results: ["511 contacts managed", "12+ pages built", "12+ API endpoints"],
     },
   ],
