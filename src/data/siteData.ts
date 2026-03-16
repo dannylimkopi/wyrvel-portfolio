@@ -44,36 +44,22 @@ export const siteData = {
 
   projects: [
     {
-      title: "AI Lead Qualification Bot",
+      title: "AI Automation Pipeline — WhatsApp to CRM",
       description:
-        "n8n workflow that automatically qualifies incoming leads using AI, enriches data, syncs to CRM, and triggers follow-up email sequences. Replaces 3-5 hours of manual sorting per week.",
-      tags: ["n8n", "OpenAI", "Webhooks", "CRM Integration"],
-      link: "#",
+        "Production automation system for a real estate agent drowning in 100+ daily WhatsApp messages. Two n8n workflows: WhatsApp Auto-Capture (5 nodes) and AI Client Intelligence (26 nodes) — running every 6 hours, scoring leads as HOT/WARM/COLD via OpenAI, auto-creating follow-up tasks and calendar events.",
+      tags: ["n8n", "OpenAI API", "REST API", "Docker", "WhatsApp"],
       type: "Automation",
+      images: ["/projects/demo1-automation.png", "/projects/demo1-workflow.png"],
+      results: ["10+ hrs/week saved", "Zero missed leads", "108 auto-generated tasks"],
     },
     {
-      title: "CRM Platform",
+      title: "Custom CRM — Built for Real Estate",
       description:
-        "Full-featured customer relationship management system built with Next.js, featuring dynamic objects, pipeline management, and automated lead capture workflows.",
-      tags: ["Next.js", "TypeScript", "PostgreSQL", "Drizzle ORM"],
-      link: "#",
+        "Deeply customised an open-source CRM into a purpose-built app for a Singapore real estate agent. Contact-centric model with property tracking (HDB/Condo/Landed), WhatsApp auto-capture, AI lead scoring, and 108 auto-generated follow-up tasks with deadline tracking.",
+      tags: ["Next.js 15", "TypeScript", "PostgreSQL", "Drizzle ORM", "Turborepo"],
       type: "Web App",
-    },
-    {
-      title: "Multi-Platform Content Publisher",
-      description:
-        "n8n automation that takes a single blog post and automatically formats, schedules, and publishes across LinkedIn, Twitter, and Facebook with platform-optimised copy.",
-      tags: ["n8n", "API Integration", "Content Automation"],
-      link: "#",
-      type: "Automation",
-    },
-    {
-      title: "Business Operations Dashboard",
-      description:
-        "Internal operations dashboard tracking KPIs, team tasks, and project timelines. Built with Next.js and real-time data from PostgreSQL.",
-      tags: ["Next.js", "React", "PostgreSQL", "Dashboard"],
-      link: "#",
-      type: "Web App",
+      images: ["/projects/demo2-screenshot-1.png", "/projects/demo2-screenshot-2.png", "/projects/demo2-screenshot-5.png"],
+      results: ["511 contacts managed", "12+ pages built", "12+ API endpoints"],
     },
   ],
 
