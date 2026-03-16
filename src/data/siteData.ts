@@ -5,6 +5,7 @@ export const siteData = {
   email: "wyrvel@gmail.com",
   fiverr: "https://www.fiverr.com/felysedaniskur",
   upwork: "https://www.upwork.com/freelancers/dannylimkopi",
+  telegram: "https://t.me/dannylimkopi",
 
   skills: {
     "Languages": ["JavaScript", "TypeScript", "Python", "HTML", "CSS", "SQL"],

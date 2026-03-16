@@ -17,6 +17,9 @@ export default function Contact() {
             <a href={`mailto:${siteData.email}`} className="btn-primary">
               Email Me
             </a>
+            <a href={(siteData as any).telegram} target="_blank" rel="noopener noreferrer" className="btn-secondary">
+              ✈ Telegram
+            </a>
             <a href={siteData.fiverr} target="_blank" rel="noopener noreferrer" className="btn-secondary">
               Fiverr
             </a>
